@@ -5,6 +5,8 @@ function PayeeForm() {
   return (
     <>
       <Input label='Username' />
+      <Input label='Account Number' />
+      <Input label='IFSC Code' />
     </>
   );
 }

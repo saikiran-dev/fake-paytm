@@ -2,56 +2,54 @@ import React from 'react';
 
 function Login({ closeModal, submitForm }) {
   return (
-    <div className='p-4 w-full max-w-2xl'>
-      <div className='bg-white rounded-lg shadow dark:bg-gray-700'>
-        <div className='flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600'>
-          <h3 className='text-xl font-semibold text-gray-900 dark:text-white'>
-            Login
-          </h3>
-          <button
-            type='button'
-            className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white'
-            data-modal-hide='default-modal'
-            onClick={closeModal}
-          >
-            <svg
-              className='w-3 h-3'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 14 14'
-            >
-              <path
-                stroke='currentColor'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
-                d='m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6'
-              />
-            </svg>
-          </button>
+    <section className='flex items-center justify-center h-screen'>
+      <div className='rounded-lg border bg-card text-card-foreground shadow-sm w-[70%] mx-auto md:w-[70%] lg:w-[30%] '>
+        <div className='flex flex-col space-y-1.5 p-6'>
+          <div className='text-2xl font-semibold leading-none tracking-tight'>
+            Signin to your Account
+          </div>
         </div>
-        <div className='p-4 md:p-5 space-y-4'>{/* <Form /> */}</div>
-        <div className='flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600'>
-          <button
-            data-modal-hide='default-modal'
-            type='button'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
-            onClick={submitForm}
-          >
-            Submit
-          </button>
-          <button
-            data-modal-hide='default-modal'
-            type='button'
-            className='ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600'
-            onClick={closeModal}
-          >
-            Cancel
+        <div className='p-6 pt-0'>
+          <div className='grid w-full items-center gap-4'>
+            <div className='flex flex-col gap-4'>
+              <label
+                className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                htmlFor='email'
+              >
+                Email
+              </label>
+              <input
+                name='email'
+                id='email'
+                placeholder='name@email.com'
+                className='flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
+                onChange={(e) => (email.current = e.target.value)}
+              />
+            </div>
+            <div className='flex flex-col gap-4'>
+              <label
+                className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                htmlFor='email'
+              >
+                Password
+              </label>
+              <div className='flex border rounded-lg'>
+                <input
+                  className='flex h-10 w-full rounded-md border border-0 border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
+                  name='password'
+                  id='password'
+                  placeholder='••••••••'
+                  onChange={(e) => (password.current = e.target.value)}
+                />
+              </div>
+            </div>
+          </div>
+          <button className='h-10 px-4 py-2 my-3 w-full bg-primary dark:bg-blue-600 text-primary-foreground dark:text-neutral-950 hover:bg-primary/90 dark:hover:bg-blue-600/90 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'>
+            Login
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
